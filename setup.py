@@ -3,7 +3,7 @@ setup(
   name = 'gaurabda',         # How you named your package folder (MyLib)
   packages = ['gaurabda', 'gaurabda.GCEnums'],   # Chose the same as "name"
   include_package_data = True,
-  package_data = {'res': 'res/*.*'},
+  package_data = {'res': ['res/*.*']},
   version = '0.7',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Calculation of Gaurabda calendar (Gaudiya Vaishnava calendar)',   # Give a short description about your library
