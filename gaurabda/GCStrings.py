@@ -2,9 +2,9 @@ import os
 import os.path
 import json
 
-import GCDisplaySettings
-from GCEnums import MahadvadasiType,EkadasiParanaType,FastType,SpecialFestivalId
-import GCUT
+import gaurabda.GCDisplaySettings as GCDisplaySettings
+from gaurabda.GCEnums import MahadvadasiType,EkadasiParanaType,FastType,SpecialFestivalId
+import gaurabda.GCUT as GCUT
 
 gstr = {}
 gstr_Modified = False
@@ -249,8 +249,9 @@ def GetDayOfWeek(i):
 
 def readFile(pszFile):
     global gstr
+
     if not os.path.exists(pszFile):
-        pszFile = 'res/strings.json'
+        pszFile = os.path.join(os.path.dirname(__file__), 'res', 'strings.json')
     with open(pszFile,'rt',encoding='utf-8') as json_file:
         gstr = json.load(json_file)
 

@@ -1,10 +1,10 @@
-from GCGregorianDate import GCGregorianDate,Today
-import GCEarthData
-import GCMath
+from gaurabda.GCGregorianDate import GCGregorianDate,Today
+import gaurabda.GCEarthData as GCEarthData
+import gaurabda.GCMath as GCMath
 import math
-import GCUT
-import GCMoonData
-import GCSunData
+import gaurabda.GCUT as GCUT
+import gaurabda.GCMoonData as GCMoonData
+import gaurabda.GCSunData as GCSunData
 
 
 

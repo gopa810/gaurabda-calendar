@@ -1,9 +1,9 @@
 import math
 import datetime
 
-import GCMath
-import GCUT
-import GCStrings
+import gaurabda.GCMath as GCMath
+import gaurabda.GCUT as GCUT
+import gaurabda.GCStrings as GCStrings
 
 def GetMonthMaxDays(year, month):
     m_months = [ 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ]

@@ -1,5 +1,5 @@
-import GCMath
-import GCUT
+import gaurabda.GCMath as GCMath
+import gaurabda.GCUT as GCUT
 import math
 
 class GCTime:

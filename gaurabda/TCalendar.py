@@ -1,37 +1,36 @@
-from GCLocation import GCLocation
-from GCCalendarDay import GCCalendarDay
-from GCGregorianDate import GCGregorianDate,Today
-from GCEarthData import EARTHDATA
-from GCEnums.MahadvadasiType import *
-from GCEnums.FastType import *
-from GCEnums.FeastType import *
-from GCEnums.SpecialFestivalId import *
-from GCEnums.GCDS import *
-from GCEnums.DisplayPriorities import *
-from GCEnums.MasaId import *
-from GCEnums.TithiId import *
-from GCEnums.EkadasiParanaType import *
-from GCEnums.CaturmasyaCodes import *
-from GCEnums.NaksatraId import *
-from GCEnums.PaksaId import *
-from GCEnums.SankrantiId import *
-from GCMoonData import MOONDATA,CalcMoonTimes
-from GCStringBuilder import GCStringBuilder,SBTF_TEXT,SBTF_RTF
+from gaurabda.GCLocation import GCLocation
+from gaurabda.GCCalendarDay import GCCalendarDay
+from gaurabda.GCGregorianDate import GCGregorianDate,Today
+from gaurabda.GCEarthData import EARTHDATA
+from gaurabda.GCEnums.MahadvadasiType import *
+from gaurabda.GCEnums.FastType import *
+from gaurabda.GCEnums.FeastType import *
+from gaurabda.GCEnums.SpecialFestivalId import *
+from gaurabda.GCEnums.GCDS import *
+from gaurabda.GCEnums.DisplayPriorities import *
+from gaurabda.GCEnums.MasaId import *
+from gaurabda.GCEnums.TithiId import *
+from gaurabda.GCEnums.EkadasiParanaType import *
+from gaurabda.GCEnums.CaturmasyaCodes import *
+from gaurabda.GCEnums.NaksatraId import *
+from gaurabda.GCEnums.PaksaId import *
+from gaurabda.GCEnums.SankrantiId import *
+from gaurabda.GCMoonData import MOONDATA,CalcMoonTimes
+from gaurabda.GCStringBuilder import GCStringBuilder,SBTF_TEXT,SBTF_RTF
 
-import TCalendar
-import GCMath
-import GCEvent
-import GCStrings
-import GCTithi
-import GCNaksatra
-import GCSankranti
-import GCDisplaySettings
-import GCTimeZone
-import GCAyanamsha
-import GCEventList
-import GCLayoutData
-import GCGlobal
-import GCUT
+import gaurabda.GCMath as GCMath
+import gaurabda.GCEvent as GCEvent
+import gaurabda.GCStrings as GCStrings
+import gaurabda.GCTithi as GCTithi
+import gaurabda.GCNaksatra as GCNaksatra
+import gaurabda.GCSankranti as GCSankranti
+import gaurabda.GCDisplaySettings as GCDisplaySettings
+import gaurabda.GCTimeZone as GCTimeZone
+import gaurabda.GCAyanamsha as GCAyanamsha
+import gaurabda.GCEventList as GCEventList
+import gaurabda.GCLayoutData as GCLayoutData
+import gaurabda.GCGlobal as GCGlobal
+import gaurabda.GCUT as GCUT
 
 from math import modf,floor
 from io import StringIO

@@ -1,27 +1,27 @@
-import GCMath
-import GCTime
-import GCUT
-import GCAyanamsha
-from GCEnums import FastType,MahadvadasiType
-import GCPancangaDate
-import GCDisplaySettings
-import GCStrings
-import GCCountry
-import GCGregorianDate
-import GCTimeZone
-import GCEarthData
-import GCStringBuilder
-import GCMoonData
-import GCSunData
-import GCConjunction
-import GCNaksatra
-import GCSankranti
-import GCDayData
-import GCTithi
-import GCYoga
-import GCLocationList
-import GCEventList
-import GCCalendar
+import gaurabda.GCMath as GCMath
+import gaurabda.GCTime as GCTime
+import gaurabda.GCUT as GCUT
+import gaurabda.GCAyanamsha as GCAyanamsha
+from gaurabda.GCEnums import FastType,MahadvadasiType
+import gaurabda.GCPancangaDate as GCPancangaDate
+import gaurabda.GCDisplaySettings as GCDisplaySettings
+import gaurabda.GCStrings as GCStrings
+import gaurabda.GCCountry as GCCountry
+import gaurabda.GCGregorianDate as GCGregorianDate
+import gaurabda.GCTimeZone as GCTimeZone
+import gaurabda.GCEarthData as GCEarthData
+import gaurabda.GCStringBuilder as GCStringBuilder
+import gaurabda.GCMoonData as GCMoonData
+import gaurabda.GCSunData as GCSunData
+import gaurabda.GCConjunction as GCConjunction
+import gaurabda.GCNaksatra as GCNaksatra
+import gaurabda.GCSankranti as GCSankranti
+import gaurabda.GCDayData as GCDayData
+import gaurabda.GCTithi as GCTithi
+import gaurabda.GCYoga as GCYoga
+import gaurabda.GCLocationList as GCLocationList
+import gaurabda.GCEventList as GCEventList
+import gaurabda.GCCalendar as GCCalendar
 import TMasaList
 import TCalendar
 import TAppDay

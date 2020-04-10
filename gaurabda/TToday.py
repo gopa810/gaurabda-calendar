@@ -1,15 +1,15 @@
-from GCGregorianDate import GCGregorianDate,Today
-from GCLocation import GCLocation
-from TCalendar import TCalendar
-from GCCalendarDay import GCCalendarDay
-from GCStringBuilder import GCStringBuilder,SBTF_RTF,SBTF_TEXT,SBTF_HTML
+from gaurabda.GCGregorianDate import GCGregorianDate,Today
+from gaurabda.GCLocation import GCLocation
+from gaurabda.TCalendar import TCalendar
+from gaurabda.GCCalendarDay import GCCalendarDay
+from gaurabda.GCStringBuilder import GCStringBuilder,SBTF_RTF,SBTF_TEXT,SBTF_HTML
 
-import GCTimeZone
-import GCLayoutData
-import GCStrings
-import GCEarthData
-import GCDisplaySettings
-import GCUT
+import gaurabda.GCTimeZone as GCTimeZone
+import gaurabda.GCLayoutData as GCLayoutData
+import gaurabda.GCStrings as GCStrings
+import gaurabda.GCEarthData as GCEarthData
+import gaurabda.GCDisplaySettings as GCDisplaySettings
+import gaurabda.GCUT as GCUT
 import datetime
 
 

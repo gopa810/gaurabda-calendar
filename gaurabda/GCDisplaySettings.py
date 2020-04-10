@@ -1,5 +1,5 @@
 import json
-import GCUT
+import gaurabda.GCUT as GCUT
 
 gss_default = [
     [0, 0, "ARTI", "Tithi at arunodaya"],#0

@@ -1,13 +1,13 @@
-from GCGregorianDate import GCGregorianDate,Today
-from GCLocation import GCLocation
-import GCMath
-import GCAyanamsha
-from GCTime import GCTime
-from GCSunData import SUNDATA
-import GCSunData
-import GCStrings
+from gaurabda.GCGregorianDate import GCGregorianDate,Today
+from gaurabda.GCLocation import GCLocation
+import gaurabda.GCMath as GCMath
+import gaurabda.GCAyanamsha as GCAyanamsha
+from gaurabda.GCTime import GCTime
+from gaurabda.GCSunData import SUNDATA
+import gaurabda.GCSunData as GCSunData
+import gaurabda.GCStrings as GCStrings
 from math import floor
-import GCUT
+import gaurabda.GCUT as GCUT
 
 sankrantiDetermineType = 2
 

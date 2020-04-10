@@ -1,13 +1,13 @@
-from GCGregorianDate import GCGregorianDate, Today
-import GCEarthData
-import GCLocation
-from GCMoonData import MOONDATA
-import GCAyanamsha
-import GCStrings
-import GCMath
-from GCTime import GCTime
-from GCSunData import SUNDATA
-import GCUT
+from gaurabda.GCGregorianDate import GCGregorianDate, Today
+import gaurabda.GCEarthData as GCEarthData
+import gaurabda.GCLocation as GCLocation
+from gaurabda.GCMoonData import MOONDATA
+import gaurabda.GCAyanamsha as GCAyanamsha
+import gaurabda.GCStrings as GCStrings
+import gaurabda.GCMath as GCMath
+from gaurabda.GCTime import GCTime
+from gaurabda.GCSunData import SUNDATA
+import gaurabda.GCUT as GCUT
 
 import math
 

@@ -1,17 +1,17 @@
-from GCGregorianDate import GCGregorianDate,Today
-from GCTime import GCTime
-import GCLocation
-import GCPancangaDate
-import GCEarthData
-import GCTithi
-from GCPancangaDate import GCGaurabdaDate
-from GCMoonData import MOONDATA
-from GCSunData import GetSunLongitude, SUNDATA
-from GCDayData import GCDayData, GetFirstDayOfYear, gGaurBeg
-import GCMath
-import GCStrings
+from gaurabda.GCGregorianDate import GCGregorianDate,Today
+from gaurabda.GCTime import GCTime
+import gaurabda.GCLocation as GCLocation
+import gaurabda.GCPancangaDate as GCPancangaDate
+import gaurabda.GCEarthData as GCEarthData
+import gaurabda.GCTithi as GCTithi
+from gaurabda.GCPancangaDate import GCGaurabdaDate
+from gaurabda.GCMoonData import MOONDATA
+from gaurabda.GCSunData import GetSunLongitude, SUNDATA
+from gaurabda.GCDayData import GCDayData, GetFirstDayOfYear, gGaurBeg
+import gaurabda.GCMath as GCMath
+import gaurabda.GCStrings as GCStrings
 from math import floor
-import GCUT
+import gaurabda.GCUT as GCUT
 
 
 def TITHI_EKADASI(a):

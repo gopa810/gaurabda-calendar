@@ -1,7 +1,7 @@
 import io
-import GCUT
-import GCStrings
-import GCDisplaySettings
+import gaurabda.GCUT as GCUT
+import gaurabda.GCStrings as GCStrings
+import gaurabda.GCDisplaySettings as GCDisplaySettings
 
 SBTF_TEXT = 1
 SBTF_RTF = 2
@@ -81,7 +81,8 @@ class GCStringBuilder:
             pass
         elif self.Format == SBTF_RTF:
             color_table = ''
-            with open('res/rtf_color_table.txt','rt') as rfile:
+            file_name = os.path.join(os.path.dirname(__file__), 'res', 'rtf_color_table.txt')
+            with open(file_name) as rfile:
                 color_table = rfile.read()
             self.Target.write("{\\rtf1\\ansi\\ansicpg1252\\deff2\\deflang1033{\\fonttbl{\\f0\\fswiss\\fcharset0 Lucida Console;} {\\f1\\fswiss\\fcharset0 Arial;}{\\f2\\froman\\fprq2\\fcharset0 Book Antiqua;}} {\\colortbl ;")
             self.Target.write(color_table)

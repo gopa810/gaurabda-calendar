@@ -1,17 +1,17 @@
-from GCLocation import GCLocation
-import GCCountry
-import GCTimeZone
+from gaurabda.GCLocation import GCLocation
+import gaurabda.GCCountry as GCCountry
+import gaurabda.GCTimeZone as GCTimeZone
 import os
 import os.path
 import json
-import GCUT
+import gaurabda.GCUT as GCUT
 
 locationList = []
 m_bModified = True
 
 def OpenFile(pszFileList):
     if not os.path.exists(pszFileList):
-        pszFileList = 'res/locations.json'
+        pszFileList = os.path.join(os.path.dirname(__file__), 'res', 'locations.json')
     ImportFile(pszFileList,True)
 
 def IsModified():

@@ -2,16 +2,16 @@ import os
 import os.path
 import json
 import math
-import GCGregorianDate
-from GCGregorianDate import GCGregorianDate,GetMonthMaxDays
-import GCUT
+import gaurabda.GCGregorianDate as GCGregorianDate
+from gaurabda.GCGregorianDate import GCGregorianDate,GetMonthMaxDays
+import gaurabda.GCUT as GCUT
 
 gzone = []
 
 def LoadFile(fileName):
     global gzone
     if not os.path.exists(fileName):
-        fileName = 'res/timezones.json'
+        fileName = os.path.join(os.path.dirname(__file__), 'res', 'timezones.json')
     with open(fileName,'rt',encoding='utf-8') as json_file:
         gzone = json.load(json_file)
 

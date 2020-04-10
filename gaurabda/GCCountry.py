@@ -2,7 +2,7 @@ import os
 import os.path
 import json
 
-import GCUT
+import gaurabda.GCUT as GCUT
 
 gcontinents = [
         "",
@@ -23,7 +23,7 @@ gcountries = []
 def InitWithFile(strFile):
     global gcountries
     if not os.path.exists(strFile):
-        strFile = 'res/countries.json'
+        strFile = os.path.join(os.path.dirname(__file__), 'res', 'countries.json')
     with open(strFile,'rt',encoding='utf-8') as json_file:
         gcountries = json.load(json_file)
     return len(gcountries)

@@ -1,5 +1,5 @@
-from GCEvent import GCEvent
-import GCUT
+from gaurabda.GCEvent import GCEvent
+import gaurabda.GCUT as GCUT
 import os
 import os.path
 import json
@@ -14,7 +14,7 @@ def add():
 def OpenFile(fileName):
     global list
     if not os.path.exists(fileName):
-        fileName = 'res/events.json'
+        fileName = os.path.join(os.path.dirname(__file__), 'res', 'events.json')
     with open(fileName,'rt',encoding='utf-8') as rf:
         events = json.load(rf)
         for e in events:
@@ -32,7 +32,8 @@ def clear():
 
 def SetOldStyleFasting(bOldStyle):
     locMatrix = []
-    with open('res/eventfast.json','rt',encoding='utf-8') as rf:
+    file_name = os.path.join(os.path.dirname(__file__), 'res', 'eventfast.json')
+    with open(file_name,'rt',encoding='utf-8') as rf:
         locMatrix = json.load(rf)
     ret = 0
     key = 'fast' if bOldStyle else 'newfast'

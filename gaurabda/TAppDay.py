@@ -1,21 +1,21 @@
-from GCLocation import GCLocation
-from GCDayData import GCDayData
-from GCGregorianDate import GCGregorianDate, Today
-from GCStringBuilder import GCStringBuilder,SBTF_TEXT,SBTF_RTF
+from gaurabda.GCLocation import GCLocation
+from gaurabda.GCDayData import GCDayData
+from gaurabda.GCGregorianDate import GCGregorianDate, Today
+from gaurabda.GCStringBuilder import GCStringBuilder,SBTF_TEXT,SBTF_RTF
 from math import floor
-import GCUT
+import gaurabda.GCUT as GCUT
 import datetime
-import GCMath
-import GCEarthData
-import GCAyanamsha
-import GCRasi
-from GCEnums.MasaId import *
-from GCPancangaDate import GCGaurabdaDate
-import GCCalendar
-import GCStrings
-import GCTimeZone
-import GCDisplaySettings
-import GCLayoutData
+import gaurabda.GCMath as GCMath
+import gaurabda.GCEarthData as GCEarthData
+import gaurabda.GCAyanamsha as GCAyanamsha
+import gaurabda.GCRasi as GCRasi
+from gaurabda.GCEnums.MasaId import *
+from gaurabda.GCPancangaDate import GCGaurabdaDate
+import gaurabda.GCCalendar as GCCalendar
+import gaurabda.GCStrings as GCStrings
+import gaurabda.GCTimeZone as GCTimeZone
+import gaurabda.GCDisplaySettings as GCDisplaySettings
+import gaurabda.GCLayoutData as GCLayoutData
 
 TRESULT_APP_CELEBS = 3
 

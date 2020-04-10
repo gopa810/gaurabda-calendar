@@ -1,5 +1,5 @@
 import math
-import GCUT
+import gaurabda.GCUT as GCUT
 
 # pi
 PI = 3.1415926535897932385
