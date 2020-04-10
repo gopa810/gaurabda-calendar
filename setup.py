@@ -2,13 +2,14 @@ from distutils.core import setup
 setup(
   name = 'gaurabda',         # How you named your package folder (MyLib)
   packages = ['gaurabda', 'gaurabda.GCEnums'],   # Chose the same as "name"
-  version = '0.4',      # Start with a small number and increase it with every change you make
+  include_package_data = True,
+  version = '0.5',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Calculation of Gaurabda calendar (Gaudiya Vaishnava calendar)',   # Give a short description about your library
   author = 'Gopal',                   # Type in your name
   author_email = 'root@gopal.home.sk',      # Type in your E-Mail
   url = 'https://github.com/gopa810/gaurabda',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/gopa810/gaurabda-calendar/archive/0.4.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/gopa810/gaurabda-calendar/archive/0.5.tar.gz',    # I explain this later on
   keywords = ['gaurabda', 'vaisnava', 'vaishnava', 'ISKCON', 'GCAL'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
       ],
