@@ -1,0 +1,11 @@
+EV_NULL              = 0x100
+EV_SUDDHA            = 0x101
+EV_UNMILANI          = 0x102
+EV_VYANJULI          = 0x103
+EV_TRISPRSA          = 0x104
+EV_UNMILANI_TRISPRSA = 0x105
+EV_PAKSAVARDHINI     = 0x106
+EV_JAYA              = 0x107
+EV_JAYANTI           = 0x108
+EV_PAPA_NASINI       = 0x109
+EV_VIJAYA            = 0x110

@@ -1,0 +1,19 @@
+[
+    {"tithi": 28, "masa":  0, "fast": 4, "newfast": 7, "cls": 0},
+    {"tithi": 29, "masa":  3, "fast": 1, "newfast": 7, "cls": 0},
+    {"tithi": 22, "masa":  4, "fast": 1, "newfast": 0, "cls": 0},
+    {"tithi": 26, "masa":  4, "fast": 1, "newfast": 7, "cls": 0},
+    {"tithi": 21, "masa":  9, "fast": 1, "newfast": 7, "cls": 0},
+    {"tithi": 26, "masa":  9, "fast": 1, "newfast": 7, "cls": 0},
+    {"tithi": 27, "masa":  9, "fast": 1, "newfast": 7, "cls": 0},
+    {"tithi":  7, "masa":  4, "fast": 5, "newfast": 7, "cls": 0},
+    {"tithi": 29, "masa": 10, "fast": 3, "newfast": 7, "cls": 0},
+    {"tithi": 23, "masa": 11, "fast": 2, "newfast": 7, "cls": 0},
+    {"tithi":  8, "masa":  4, "fast": 1, "newfast": 0, "cls": 2},
+    {"tithi": 27, "masa":  4, "fast": 1, "newfast": 0, "cls": 2},
+    {"tithi": 14, "masa":  2, "fast": 1, "newfast": 0, "cls": 2},
+    {"tithi": 25, "masa":  6, "fast": 1, "newfast": 0, "cls": 2},
+    {"tithi": 18, "masa":  6, "fast": 1, "newfast": 0, "cls": 2},
+    {"tithi":  3, "masa":  8, "fast": 1, "newfast": 0, "cls": 2},
+    {"tithi":  4, "masa": 10, "fast": 1, "newfast": 0, "cls": 2}
+]
