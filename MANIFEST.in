@@ -1,3 +1,2 @@
-graft gaurabda-calendar/GCEnums
-graft gaurabda-calendar/res
+graft gaurabda/res
 global-exclude *.pyc
