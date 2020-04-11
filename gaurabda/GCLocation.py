@@ -44,11 +44,13 @@ class GCLocation:
                 self.m_nTimezoneId = data['tzid']
                 self.m_strTimeZone = GCTimeZone.GetTimeZoneName(id=self.m_nTimezoneId)
                 self.m_fTimezone = GCTimeZone.GetTimeZoneOffset(id=self.m_nTimezoneId)
-            else:
-                if 'tzname' in data:
-                    self.m_strTimeZone = data['tzname']
-                if 'offset' in data:
-                    self.m_fTimezone = data['tzoffset']
+            elif 'tzname' in data:
+                tzone = GCTimeZone.GetTimeZone(name=data['tzname'])
+                self.m_nTimezoneId = tzone['id']
+                self.m_strTimeZone = data['tzname']
+                self.m_fTimezone = tzone['offset']/60.0
+            elif 'offset' in data:
+                self.m_fTimezone = data['offset']
 
     @property
     def m_strLongitude(self):

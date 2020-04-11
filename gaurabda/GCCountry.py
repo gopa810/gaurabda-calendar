@@ -39,6 +39,9 @@ def FindCountry(name=None,abbr=None):
                 return a
     return None
 
+def GetCountries():
+    return [a['name'] for a in gcountries]
+
 def GetCountryName(w):
     bytes = int(w).to_bytes(2,byteorder='little',signed=False)
     abbr = chr(bytes[0]) + chr(bytes[1])

@@ -21,12 +21,19 @@ def ID2INDEX(_id):
             return i
     return None
 
-def GetTimeZone(id=None,index=None):
+def GetTimeZone(id=None,index=None,name=None):
+    if name!=None:
+        for tidx,t in enumerate(gzone):
+            if t['name']==name:
+                index = tidx
     if id!=None:
         index=ID2INDEX(id)
     if index==None:
         raise
     return gzone[index]
+
+def GetTimeZones():
+    return [g['name'] for g in gzone]
 
 def GetTimeZoneName(id=None,index=None):
     if id!=None:

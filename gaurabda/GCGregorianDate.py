@@ -1,5 +1,6 @@
 import math
 import datetime
+import re
 
 import gaurabda.GCMath as GCMath
 import gaurabda.GCUT as GCUT
@@ -62,16 +63,20 @@ def CalculateJulianDay(year, month, day):
 
 
 class GCGregorianDate:
-    def __init__(self,year=2000,month=1,day=1,shour=0.5,tzone=0.0,date=None,addDays=0):
-        if date!=None:
-            self.Set(date)
-        else:
-            self.year = year
-            self.month = month
-            self.day = day
-            self.shour = shour
-            self.tzone = tzone
-            self.InitWeekDay()
+    def __init__(self,year=None,month=None,day=None,shour=None,tzone=None,date=None,text=None,addDays=0):
+        self.year = 2000
+        self.month = 1
+        self.day = 1
+        self.shour = 0.5
+        self.tzone = 0.0
+        if text != None: self.SetText(text)
+        if date!=None: self.Set(date)
+        if year != None: self.year = year
+        if month != None: self.month = month
+        if day != None: self.day = day
+        if shour != None: self.shour = shour
+        if tzone != None: self.tzone = tzone
+        self.InitWeekDay()
         if addDays!=0:
             self.AddDays(addDays)
 
@@ -86,6 +91,34 @@ class GCGregorianDate:
 
     def time_str(self):
         return "{:02d}:{:02d}:{:02d}".format(self.GetHour(), self.GetMinute(), self.GetSecond())
+
+    def MonthAbrToInt(self,text):
+        if len(text)>3: text=text[:3]
+        for i in range(65,78):
+            if GCStrings.getString(i).lower()==text.lower():
+                return i-64
+        raise
+
+    def SetText(self,text):
+        y = 2000
+        m = 1
+        d = 1
+        sh = 0.5
+        tz = 0.0
+        mr = re.match( r'([0-9]+) ([A-Za-z]+) ([0-9]+)', text )
+        if mr:
+            try:
+                d = int(mr.group(1))
+                m = self.MonthAbrToInt(mr.group(2))
+                y = int(mr.group(3))
+                self.year = y
+                self.month = m
+                self.day = d
+                self.NormalizeValues()
+            except:
+                return
+            return
+
 
     def IsLessThan(self,date):
         y1,m1,d1,h1 = NormalizedValues(self,tzone=True)

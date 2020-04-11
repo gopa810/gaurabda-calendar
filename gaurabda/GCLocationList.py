@@ -40,6 +40,22 @@ def Add(loc):
     locationList.append(loc)
     m_bModified = True
 
+def FindLocation(city=None,country=None):
+    for L in locationList:
+        if city==None or city==L.m_strCity:
+            if country==None or country==L.m_strCountry:
+                return L
+    return None
+
+def GetLocationsForCountry(country=None,limit=-1):
+    rv = []
+    for L in locationList:
+        if country==None or country==L.m_strCountry:
+            if len(rv)<limit or limit<0:
+                rv.append(L)
+    return rv
+
+
 def RemoveAt(index):
     del locationList[index]
     m_bModified = True
