@@ -19,7 +19,7 @@ setup(
   description = 'Calculation of Gaurabda calendar (Gaudiya Vaishnava calendar)',   # Give a short description about your library
   author = 'Gopal',                   # Type in your name
   author_email = 'root@gopal.home.sk',      # Type in your E-Mail
-  url = 'https://github.com/gopa810/gaurabda',   # Provide either the link to your github or to your website
+  url = 'https://github.com/gopa810/gaurabda-calendar',   # Provide either the link to your github or to your website
   download_url = 'https://github.com/gopa810/gaurabda-calendar/archive/' + curr_ver + '.tar.gz',    # I explain this later on
   keywords = ['gaurabda', 'vaisnava', 'vaishnava', 'ISKCON', 'GCAL'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
@@ -35,6 +35,5 @@ setup(
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
   ],
-      long_description=long_description,
-      long_description_content_type='text/markdown',
+      long_description='Gaudiya Vaisnava calendar calculation utilities.',
 )
