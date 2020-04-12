@@ -39,6 +39,21 @@ class GCDayData:
         # distance of moon and sun in degrees
         self.msDistance = 0.0
 
+    def __iter__(self):
+        yield 'julianDay', self.jdate
+        yield 'tithi', self.nTithi
+        yield 'masa', self.nMasa
+        yield 'naksatra', self.nNaksatra
+        yield 'yoga', self.nYoga
+        yield 'sun', dict(self.sun)
+        #yield 'moon', dict(self.moon)
+        yield 'gaurabda_year', self.nGaurabdaYear
+        yield 'ayanamsha', self.msAyanamsa
+        yield 'sun_rasi', self.nSunRasi
+        yield 'moon_rasi', self.nMoonRasi
+        yield 'tithiElapse', self.nTithiElapse
+        yield 'naksatraElapse', self.nNaksatraElapse
+
     @property
     def nPaksa(self):
         return 1 if self.nTithi >= 15 else 0

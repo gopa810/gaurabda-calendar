@@ -152,6 +152,15 @@ class TToday:
         sb.AppendNote()
         sb.AppendDocumentTail()
 
+    def write(self,stream,format='html'):
+        if format=='plain':
+            self.formatPlain(stream)
+        elif format=='rtf':
+            self.formatRtf(stream)
+        elif format=='html':
+            self.writeHtml(stream)
+
+
 def unittests():
     GCUT.info('today results')
     loc = GCLocation(data={

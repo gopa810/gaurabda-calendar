@@ -35,6 +35,7 @@ import gaurabda.GCUT as GCUT
 from math import modf,floor
 from io import StringIO
 import datetime
+import json
 
 CDB_MAXDAYS = 16
 BEFORE_DAYS = 8
@@ -51,6 +52,25 @@ class TCalendar:
         self.nTop = 0
         self.top = 0
         self.days = [None] * CDB_MAXDAYS
+
+    def __dict__(self):
+        return {
+            'location': dict(self.m_Location),
+            'start': dict(self.m_vcStart),
+            'count': self.m_vcCount,
+            'days': [dict(self.days[v]) for v in range(BEFORE_DAYS,self.m_vcCount+BEFORE_DAYS)]
+        }
+
+    def __iter__(self):
+        yield 'location', dict(self.m_Location)
+        yield 'start', dict(self.m_vcStart)
+        yield 'count', self.m_vcCount
+        yield 'days', [dict(v) for v in self.days_iter()]
+
+    def days_iter(self):
+        for v in range(BEFORE_DAYS,self.m_vcCount+BEFORE_DAYS):
+            if self.m_data[v] != None:
+                yield self.m_data[v]
 
     def DAYS_TO_ENDWEEK(self,lastMonthDay):
         return (21-(lastMonthDay - GCDisplaySettings.getValue(GENERAL_FIRST_DOW)))%7
@@ -344,10 +364,7 @@ class TCalendar:
                 (m,h) = modf(d2.shour*24)
                 str3 = "{} {} {:02d}:{:02d}".format(d2.day, GCStrings.GetMonthAbreviation(d2.month), int(h), int(m*60))
 
-                # print info
-                "{}: {} -- {} {} {} ({})".format(GCStrings.getString(89), GCStrings.GetTithiName((self.m_data[i].astrodata.nTithi + 29)%30), str2, GCStrings.getString(851), str3, GCStrings.GetDSTSignature(self.m_data[i].hasDST))
-
-                self.m_data[i].AddEvent(PRIO_KSAYA, CAL_KSAYA, str)
+                self.m_data[i].AddEvent(PRIO_KSAYA, CAL_KSAYA, "{}: {} -- {} {} {} ({})".format(GCStrings.getString(89), GCStrings.GetTithiName((self.m_data[i].astrodata.nTithi + 29)%30), str2, GCStrings.getString(851), str3, GCStrings.GetDSTSignature(self.m_data[i].hasDST)))
 
         for i in range(BEFORE_DAYS,self.m_PureCount + BEFORE_DAYS):
            self.m_data[i].dayEvents = sorted(self.m_data[i].dayEvents, key=lambda k: k["prio"])
@@ -1640,6 +1657,21 @@ class TCalendar:
         xml.write("</tr>\n</table>\n")
         xml.write("</body>\n</html>\n")
         return 1
+
+    def write(self,stream,format='html',layout='list'):
+        if format=='plain':
+            self.formatPlainText(stream)
+        elif format=='rtf':
+            self.formatRtf(stream)
+        elif format=='xml':
+            self.writeXml(stream)
+        elif format=='html':
+            if layout=='list':
+                self.writeHtml(stream)
+            elif layout=='table':
+                self.writeTableHtml(stream)
+        elif format=='json':
+            stream.write(json.dumps(dict(self), indent=4))
 
 
 def unittests():

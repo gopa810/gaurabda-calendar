@@ -90,6 +90,10 @@ class GCLocation:
     def __str__(self):
         return "{} ({}, {}, {}: {})".format(self.m_strName, self.m_strLatitude, self.m_strLongitude, GCStrings.getString(12), self.m_strTimeZone)
 
+    def __iter__(self):
+        for k,v in self.data().items():
+            yield k,v
+
     def __dict__(self):
         return self.data()
 

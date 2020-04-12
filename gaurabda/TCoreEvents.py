@@ -468,6 +468,16 @@ class TCoreEvents:
         stream.write("</body>\n</html>\n")
         return 1
 
+    def write(self,stream,format='html',layout='list'):
+        if format=='plain':
+            self.formatText(stream)
+        elif format=='rtf':
+            self.formatRtf(stream)
+        elif format=='xml':
+            self.formatXml(stream)
+        elif format=='html':
+            self.writeHtml(stream)
+            
 def unittests():
     GCUT.info('core events results')
     loc = GCLocation(data={

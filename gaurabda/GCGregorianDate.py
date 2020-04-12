@@ -89,6 +89,27 @@ class GCGregorianDate:
     def __repr__(self):
         return "{:2d} {} {:04d}  {:02d}:{:02d}:{:02d}".format(self.day, GCStrings.GetMonthAbreviation(self.month), self.year, self.GetHour(), self.GetMinute(), self.GetSecond())
 
+    def __dict__(self):
+        return {
+            'year': self.year,
+            'month': self.month,
+            'day': self.day,
+            'hour': self.GetHour(),
+            'minute': self.GetMinute(),
+            'second': self.GetSecond(),
+            'offset': self.tzone
+        }
+
+    def __iter__(self):
+        yield 'year', self.year,
+        yield 'month', self.month,
+        yield 'day', self.day,
+        yield 'hour', self.GetHour(),
+        yield 'minute', self.GetMinute(),
+        yield 'second', self.GetSecond(),
+        yield 'offset', self.tzone
+
+
     def time_str(self):
         return "{:02d}:{:02d}:{:02d}".format(self.GetHour(), self.GetMinute(), self.GetSecond())
 

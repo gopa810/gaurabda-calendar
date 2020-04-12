@@ -83,15 +83,21 @@ tc.CalculateCalendar(loc,today,365)
 
 # save results in various formats
 with open('calendar.txt','wt') as wf:
-    tc.formatPlainText(wf)
+    tc.write(wf, format='plain')
 with open('test/calendar.rtf','wt') as wf:
-    tc.formatRtf(wf)
+    tc.write(wf, format='rtf')
 with open('test/calendar.html','wt') as wf:
-    tc.writeHtml(wf)
+    tc.write(wf)
 with open('test/calendar2.html','wt') as wf:
-    tc.writeTableHtml(wf)
+    tc.write(wf, layout='table')
+with open('test/calendar.json','wt') as wf:
+    tc.write(wf, format='json')
 with open('test/calendar.xml','wt') as wf:
-    tc.writeXml(wf)
+    tc.write(wf, format='xml')
 ```
 
-Argument for formatPlainText/formatRtf/etc. is writer, so it can be any text stream from `io` module.
+Arguments for write method of TCalendar class:
+
+* **stream** any text writer, for example subclass of io.TextWriter
+* **format** this is optional parameter, default value is 'html', posible values are: 'plain', 'rtf', 'xml', 'html', 'json'
+* **layout** this is optional, denotes layout of output. It is effective for 'html' format, and possible values are 'list' and 'table'. Default is 'list'.

@@ -44,6 +44,29 @@ class GCCalendarDay:
         #double sankranti_time
         self.sankranti_day = GCGregorianDate()
 
+    def __iter__(self):
+        yield 'date', dict(self.date)
+        yield 'astrodata', dict(self.astrodata)
+        yield 'hasDST', self.hasDST
+        yield 'feasting', self.nFeasting
+        if len(self.dayEvents)>0:
+            yield 'events', self.dayEvents
+        yield 'fast', self.nFastType
+        yield 'ekadashiType', self.nMhdType
+        yield 'ekadashiName', self.ekadasi_vrata_name
+        if self.ekadasi_parana:
+            yield 'ekadashiParana', {
+                'startTime': self.eparana_time1,
+                'endTime': self.eparana_time2,
+                'startReason': self.eparana_type1,
+                'endReason': self.eparana_type2
+            }
+        if self.sankranti_zodiac>=0:
+            yield 'sankranti', {
+                'rasi': self.sankranti_zodiac,
+                'datetime': dict(self.sankranti_day)
+            }
+
     def GetTextLineCount(self):
         nCount = 1
         for ed in self.dayEvents:

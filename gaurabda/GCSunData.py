@@ -166,6 +166,14 @@ class SUNDATA:
         # length of the day
         self.length = GCTime()
 
+    def __iter__(self):
+        yield 'rise_deg', self.sunrise_deg,
+        yield 'noon_deg', (self.sunrise_deg + self.sunset_deg)/2,
+        yield 'set_deg', self.sunset_deg,
+        yield 'rise', repr(self.rise),
+        yield 'noon', repr(self.noon),
+        yield 'set', repr(self.set)
+
     def __repr__(self):
         d = {
             'rise_deg': self.sunrise_deg,
