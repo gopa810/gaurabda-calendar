@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 
-curr_ver = '0.7.6'
+curr_ver = '0.7.7'
 
 setup(
   name = 'gaurabda',         # How you named your package folder (MyLib)
