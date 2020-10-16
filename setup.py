@@ -1,8 +1,8 @@
 import setuptools
 
-current_version = "0.7.8"
+current_version = "0.7.9"
 
-with open("README.md", "r") as fh:
+with open("README.rst", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
@@ -13,7 +13,7 @@ setuptools.setup(
     license="MIT",
     description="Calculation of Gaurabda calendar (Gaudiya Vaishnava calendar)",
     long_description=long_description,
-    long_description_content_type="text/markdown",
+    long_description_content_type="text/x-rst",
     url="https://github.com/gopa810/gaurabda-calendar",
     download_url='https://github.com/gopa810/gaurabda-calendar/archive/' + current_version + '.tar.gz',
     keywords=['gaurabda', 'vaisnava', 'vaishnava', 'ISKCON', 'GCAL'],

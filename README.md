@@ -17,7 +17,7 @@ We can obtain location object basically in two ways:
 
 * create new location
 
-```
+```python
 # create new location
 
 loc = gcal.GCLocation(data = {
@@ -32,7 +32,7 @@ List of all timezones can be obtained by calling `gcal.GetTimeZones()`.
 
 * find location in existing list
 
-```
+```python
 # find existing location
 
 loc = gcal.FindLocation(city='Vrindavan')
