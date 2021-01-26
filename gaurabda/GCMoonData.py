@@ -1,12 +1,12 @@
 import math
 
-import gaurabda.GCEarthData as GCEarthData
-import gaurabda.GCGregorianDate as GCGregorianDate
-import gaurabda.GCTime as GCTime
-import gaurabda.GCCoords as GCCoords
-import gaurabda.GCUT as GCUT
-import gaurabda.GCMath as GCMath
-import gaurabda.GCAyanamsha as GCAyanamsha
+from . import GCEarthData as GCEarthData
+from . import GCGregorianDate as GCGregorianDate
+from . import GCTime as GCTime
+from . import GCCoords as GCCoords
+from . import GCUT as GCUT
+from . import GCMath as GCMath
+from . import GCAyanamsha as GCAyanamsha
 
 class MOONDATA:
     def __init__(self):

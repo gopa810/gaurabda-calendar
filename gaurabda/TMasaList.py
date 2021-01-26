@@ -1,10 +1,10 @@
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCStringBuilder as GCStringBuilder
-import gaurabda.GCLayoutData as GCLayoutData
-from gaurabda.GCLocation import GCLocation
-from gaurabda.GCGregorianDate import GCGregorianDate
-from gaurabda.GCDayData import GCDayData, GetFirstDayOfYear
-import gaurabda.GCUT as GCUT
+from . import GCStrings as GCStrings
+from . import GCStringBuilder as GCStringBuilder
+from . import GCLayoutData as GCLayoutData
+from .GCLocation import GCLocation
+from .GCGregorianDate import GCGregorianDate
+from .GCDayData import GCDayData, GetFirstDayOfYear
+from . import GCUT as GCUT
 
 class TMasaList:
     def __init__(self):

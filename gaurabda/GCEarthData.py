@@ -1,11 +1,11 @@
 import math
 
-import gaurabda.GCMath as GCMath
-import gaurabda.GCAyanamsha as GCAyanamsha
-import gaurabda.GCTimeZone as GCTimeZone
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCCoords as GCCoords
-import gaurabda.GCUT as GCUT
+from . import GCMath as GCMath
+from . import GCAyanamsha as GCAyanamsha
+from . import GCTimeZone as GCTimeZone
+from . import GCStrings as GCStrings
+from . import GCCoords as GCCoords
+from . import GCUT as GCUT
 
 
 def calc_epsilon_phi(date):

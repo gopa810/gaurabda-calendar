@@ -1,7 +1,7 @@
 import io
-import gaurabda.GCUT as GCUT
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCDisplaySettings as GCDisplaySettings
+from . import GCUT as GCUT
+from . import GCStrings as GCStrings
+from . import GCDisplaySettings as GCDisplaySettings
 
 SBTF_TEXT = 1
 SBTF_RTF = 2

@@ -1,10 +1,10 @@
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCCountry as GCCountry
-import gaurabda.GCLocation as GCLocation
-import gaurabda.GCLocationList as GCLocationList
-import gaurabda.GCDisplaySettings as GCDisplaySettings
-import gaurabda.GCEventList as GCEventList
-import gaurabda.GCTimeZone as GCTimeZone
+from . import GCStrings
+from . import GCCountry
+from . import GCLocation
+from . import GCLocationList
+from . import GCDisplaySettings
+from . import GCEventList
+from . import GCTimeZone
 
 GCStrings.readFile('strings.json')
 GCCountry.InitWithFile('countries.json')

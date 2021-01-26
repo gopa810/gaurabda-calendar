@@ -1,5 +1,5 @@
-from gaurabda.GCEvent import GCEvent
-import gaurabda.GCUT as GCUT
+from .GCEvent import GCEvent
+from . import GCUT as GCUT
 import os
 import os.path
 import json

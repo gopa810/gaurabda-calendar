@@ -2,9 +2,9 @@ import os
 import os.path
 import json
 
-import gaurabda.GCDisplaySettings as GCDisplaySettings
-from gaurabda.GCEnums import MahadvadasiType,EkadasiParanaType,FastType,SpecialFestivalId
-import gaurabda.GCUT as GCUT
+from . import GCDisplaySettings as GCDisplaySettings
+from .GCEnums import MahadvadasiType,EkadasiParanaType,FastType,SpecialFestivalId
+from . import GCUT as GCUT
 
 gstr = {}
 gstr_Modified = False

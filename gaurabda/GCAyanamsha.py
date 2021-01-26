@@ -1,4 +1,4 @@
-import gaurabda.GCUT as GCUT
+from . import GCUT as GCUT
 
 ayamashaType = 1;
 

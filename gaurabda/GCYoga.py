@@ -1,10 +1,10 @@
-from gaurabda.GCMoonData import MOONDATA
-from gaurabda.GCSunData import SUNDATA, GetSunLongitude
-from gaurabda.GCGregorianDate import GCGregorianDate,Today
-import gaurabda.GCEarthData as GCEarthData
-import gaurabda.GCAyanamsha as GCAyanamsha
-import gaurabda.GCMath as GCMath
-import gaurabda.GCUT as GCUT
+from .GCMoonData import MOONDATA
+from .GCSunData import SUNDATA, GetSunLongitude
+from .GCGregorianDate import GCGregorianDate,Today
+from . import GCEarthData as GCEarthData
+from . import GCAyanamsha as GCAyanamsha
+from . import GCMath as GCMath
+from . import GCUT as GCUT
 from math import floor
 
 def GetNextYogaStart(ed, startDate, nextDate):

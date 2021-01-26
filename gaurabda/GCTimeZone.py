@@ -2,9 +2,8 @@ import os
 import os.path
 import json
 import math
-import gaurabda.GCGregorianDate as GCGregorianDate
-from gaurabda.GCGregorianDate import GCGregorianDate,GetMonthMaxDays
-import gaurabda.GCUT as GCUT
+from .GCGregorianDate import GCGregorianDate,GetMonthMaxDays
+from . import GCUT as GCUT
 
 gzone = []
 
@@ -78,7 +77,7 @@ def GetDaylightTimeStartDate(nDst,nYear):
         vcStart.day = a['startWeek']
     else:
         if a['startWeek'] == 5:
-            vcStart.day = GCGregorianDate.GetMonthMaxDays(nYear, a['startMonth'])
+            vcStart.day = GetMonthMaxDays(nYear, a['startMonth'])
             vcStart.InitWeekDay()
             while vcStart.dayOfWeek != a['startDay']:
                 vcStart.PreviousDay()

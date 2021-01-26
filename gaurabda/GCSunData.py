@@ -1,12 +1,12 @@
-from gaurabda.GCTime import GCTime
-from gaurabda.GCEnums import KalaType
+from .GCTime import GCTime
+from .GCEnums import KalaType
 import math
 import json
-import gaurabda.GCMath as GCMath
-import gaurabda.GCGregorianDate as GCGregorianDate
-import gaurabda.GCEarthData as GCEarthData
-import gaurabda.GCCoords as GCCoords
-import gaurabda.GCUT as GCUT
+from . import GCMath as GCMath
+from . import GCGregorianDate as GCGregorianDate
+from . import GCEarthData as GCEarthData
+from . import GCCoords as GCCoords
+from . import GCUT as GCUT
 
 
 def GetSunLongitude(vct):

@@ -1,5 +1,5 @@
-import gaurabda.GCUT as GCUT
-import gaurabda.GCStrings as GCStrings
+from . import GCUT as GCUT
+from . import GCStrings as GCStrings
 
 class GCGaurabdaDate:
     def __init__(self,t=0,m=0,y=520):

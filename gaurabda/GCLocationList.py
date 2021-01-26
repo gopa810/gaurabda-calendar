@@ -1,10 +1,11 @@
-from gaurabda.GCLocation import GCLocation
-import gaurabda.GCCountry as GCCountry
-import gaurabda.GCTimeZone as GCTimeZone
+from .GCLocation import GCLocation
+from . import GCCountry
+from . import GCTimeZone
+from . import GCUT
+
 import os
 import os.path
 import json
-import gaurabda.GCUT as GCUT
 
 locationList = []
 m_bModified = True

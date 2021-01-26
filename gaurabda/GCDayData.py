@@ -1,13 +1,13 @@
-from gaurabda.GCSunData import SUNDATA
-from gaurabda.GCMoonData import MOONDATA
-from gaurabda.GCGregorianDate import GCGregorianDate
-import gaurabda.GCDayData as GCDayData
-import gaurabda.GCEarthData as GCEarthData
-import gaurabda.GCAyanamsha as GCAyanamsha
-import gaurabda.GCRasi as GCRasi
-import gaurabda.GCMath as GCMath
-import gaurabda.GCConjunction as GCConjunction
-import gaurabda.GCUT as GCUT
+from .GCSunData import SUNDATA
+from .GCMoonData import MOONDATA
+from .GCGregorianDate import GCGregorianDate
+from . import GCDayData as GCDayData
+from . import GCEarthData as GCEarthData
+from . import GCAyanamsha as GCAyanamsha
+from . import GCRasi as GCRasi
+from . import GCMath as GCMath
+from . import GCConjunction as GCConjunction
+from . import GCUT as GCUT
 from math import floor
 
 class GCDayData:

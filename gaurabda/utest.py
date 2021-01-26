@@ -1,27 +1,27 @@
-import gaurabda.GCMath as GCMath
-import gaurabda.GCTime as GCTime
-import gaurabda.GCUT as GCUT
-import gaurabda.GCAyanamsha as GCAyanamsha
-from gaurabda.GCEnums import FastType,MahadvadasiType
-import gaurabda.GCPancangaDate as GCPancangaDate
-import gaurabda.GCDisplaySettings as GCDisplaySettings
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCCountry as GCCountry
-import gaurabda.GCGregorianDate as GCGregorianDate
-import gaurabda.GCTimeZone as GCTimeZone
-import gaurabda.GCEarthData as GCEarthData
-import gaurabda.GCStringBuilder as GCStringBuilder
-import gaurabda.GCMoonData as GCMoonData
-import gaurabda.GCSunData as GCSunData
-import gaurabda.GCConjunction as GCConjunction
-import gaurabda.GCNaksatra as GCNaksatra
-import gaurabda.GCSankranti as GCSankranti
-import gaurabda.GCDayData as GCDayData
-import gaurabda.GCTithi as GCTithi
-import gaurabda.GCYoga as GCYoga
-import gaurabda.GCLocationList as GCLocationList
-import gaurabda.GCEventList as GCEventList
-import gaurabda.GCCalendar as GCCalendar
+from . import GCMath as GCMath
+from . import GCTime as GCTime
+from . import GCUT as GCUT
+from . import GCAyanamsha as GCAyanamsha
+from .GCEnums import FastType,MahadvadasiType
+from . import GCPancangaDate as GCPancangaDate
+from . import GCDisplaySettings as GCDisplaySettings
+from . import GCStrings as GCStrings
+from . import GCCountry as GCCountry
+from . import GCGregorianDate as GCGregorianDate
+from . import GCTimeZone as GCTimeZone
+from . import GCEarthData as GCEarthData
+from . import GCStringBuilder as GCStringBuilder
+from . import GCMoonData as GCMoonData
+from . import GCSunData as GCSunData
+from . import GCConjunction as GCConjunction
+from . import GCNaksatra as GCNaksatra
+from . import GCSankranti as GCSankranti
+from . import GCDayData as GCDayData
+from . import GCTithi as GCTithi
+from . import GCYoga as GCYoga
+from . import GCLocationList as GCLocationList
+from . import GCEventList as GCEventList
+from . import GCCalendar as GCCalendar
 import TMasaList
 import TCalendar
 import TAppDay

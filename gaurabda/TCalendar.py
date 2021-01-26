@@ -1,36 +1,36 @@
-from gaurabda.GCLocation import GCLocation
-from gaurabda.GCCalendarDay import GCCalendarDay
-from gaurabda.GCGregorianDate import GCGregorianDate,Today
-from gaurabda.GCEarthData import EARTHDATA
-from gaurabda.GCEnums.MahadvadasiType import *
-from gaurabda.GCEnums.FastType import *
-from gaurabda.GCEnums.FeastType import *
-from gaurabda.GCEnums.SpecialFestivalId import *
-from gaurabda.GCEnums.GCDS import *
-from gaurabda.GCEnums.DisplayPriorities import *
-from gaurabda.GCEnums.MasaId import *
-from gaurabda.GCEnums.TithiId import *
-from gaurabda.GCEnums.EkadasiParanaType import *
-from gaurabda.GCEnums.CaturmasyaCodes import *
-from gaurabda.GCEnums.NaksatraId import *
-from gaurabda.GCEnums.PaksaId import *
-from gaurabda.GCEnums.SankrantiId import *
-from gaurabda.GCMoonData import MOONDATA,CalcMoonTimes
-from gaurabda.GCStringBuilder import GCStringBuilder,SBTF_TEXT,SBTF_RTF
+from .GCLocation import GCLocation
+from .GCCalendarDay import GCCalendarDay
+from .GCGregorianDate import GCGregorianDate,Today
+from .GCEarthData import EARTHDATA
+from .GCEnums.MahadvadasiType import *
+from .GCEnums.FastType import *
+from .GCEnums.FeastType import *
+from .GCEnums.SpecialFestivalId import *
+from .GCEnums.GCDS import *
+from .GCEnums.DisplayPriorities import *
+from .GCEnums.MasaId import *
+from .GCEnums.TithiId import *
+from .GCEnums.EkadasiParanaType import *
+from .GCEnums.CaturmasyaCodes import *
+from .GCEnums.NaksatraId import *
+from .GCEnums.PaksaId import *
+from .GCEnums.SankrantiId import *
+from .GCMoonData import MOONDATA,CalcMoonTimes
+from .GCStringBuilder import GCStringBuilder,SBTF_TEXT,SBTF_RTF
 
-import gaurabda.GCMath as GCMath
-import gaurabda.GCEvent as GCEvent
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCTithi as GCTithi
-import gaurabda.GCNaksatra as GCNaksatra
-import gaurabda.GCSankranti as GCSankranti
-import gaurabda.GCDisplaySettings as GCDisplaySettings
-import gaurabda.GCTimeZone as GCTimeZone
-import gaurabda.GCAyanamsha as GCAyanamsha
-import gaurabda.GCEventList as GCEventList
-import gaurabda.GCLayoutData as GCLayoutData
-import gaurabda.GCGlobal as GCGlobal
-import gaurabda.GCUT as GCUT
+from . import GCMath
+from . import GCEvent
+from . import GCStrings
+from . import GCTithi
+from . import GCNaksatra
+from . import GCSankranti
+from . import GCDisplaySettings
+from . import GCTimeZone
+from . import GCAyanamsha
+from . import GCEventList
+from . import GCLayoutData
+from . import GCGlobal
+from . import GCUT
 
 from math import modf,floor
 from io import StringIO
@@ -54,11 +54,12 @@ class TCalendar:
         self.days = [None] * CDB_MAXDAYS
 
     def __dict__(self):
+        days = [dict(v) for v in self.days_iter()]
         return {
             'location': dict(self.m_Location),
             'start': dict(self.m_vcStart),
             'count': self.m_vcCount,
-            'days': [dict(self.days[v]) for v in range(BEFORE_DAYS,self.m_vcCount+BEFORE_DAYS)]
+            'days': days
         }
 
     def __iter__(self):
@@ -364,7 +365,9 @@ class TCalendar:
                 (m,h) = modf(d2.shour*24)
                 str3 = "{} {} {:02d}:{:02d}".format(d2.day, GCStrings.GetMonthAbreviation(d2.month), int(h), int(m*60))
 
-                self.m_data[i].AddEvent(PRIO_KSAYA, CAL_KSAYA, "{}: {} -- {} {} {} ({})".format(GCStrings.getString(89), GCStrings.GetTithiName((self.m_data[i].astrodata.nTithi + 29)%30), str2, GCStrings.getString(851), str3, GCStrings.GetDSTSignature(self.m_data[i].hasDST)))
+                str4 = "{}: {} -- {} {} {} ({})".format(GCStrings.getString(89), GCStrings.GetTithiName((self.m_data[i].astrodata.nTithi + 29)%30), str2, GCStrings.getString(851), str3, GCStrings.GetDSTSignature(self.m_data[i].hasDST))
+                print(str4, str4.encode('utf-8'))
+                self.m_data[i].AddEvent(PRIO_KSAYA, CAL_KSAYA, str4)
 
         for i in range(BEFORE_DAYS,self.m_PureCount + BEFORE_DAYS):
            self.m_data[i].dayEvents = sorted(self.m_data[i].dayEvents, key=lambda k: k["prio"])
@@ -1673,6 +1676,8 @@ class TCalendar:
         elif format=='json':
             stream.write(json.dumps(dict(self), indent=4))
 
+    def get_json_object(self):
+        return dict(self)
 
 def unittests():
     GCUT.info('calendar results')

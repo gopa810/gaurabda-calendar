@@ -1,24 +1,24 @@
-from gaurabda.GCEnums.CoreEventType import *
-from gaurabda.GCEnums.KalaType import *
-from gaurabda.GCEnums.GCDS import *
-from gaurabda.GCGregorianDate import GCGregorianDate,Today
-from gaurabda.GCLocation import GCLocation
-import gaurabda.GCTimeZone as GCTimeZone
-from gaurabda.GCSunData import SUNDATA,CalculateKala
-from gaurabda.GCMoonData import MOONDATA,GetNextMoonRasi
-from gaurabda.GCStringBuilder import GCStringBuilder,SBTF_RTF,SBTF_TEXT
-import gaurabda.GCTithi as GCTithi
-import gaurabda.GCNaksatra as GCNaksatra
-import gaurabda.GCSankranti as GCSankranti
-import gaurabda.GCConjunction as GCConjunction
-import gaurabda.GCAyanamsha as GCAyanamsha
-import gaurabda.GCYoga as GCYoga
-import gaurabda.GCRasi as GCRasi
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCDisplaySettings as GCDisplaySettings
-import gaurabda.GCLayoutData as GCLayoutData
+from .GCEnums.CoreEventType import *
+from .GCEnums.KalaType import *
+from .GCEnums.GCDS import *
+from .GCGregorianDate import GCGregorianDate,Today
+from .GCLocation import GCLocation
+from . import GCTimeZone as GCTimeZone
+from .GCSunData import SUNDATA,CalculateKala
+from .GCMoonData import MOONDATA,GetNextMoonRasi
+from .GCStringBuilder import GCStringBuilder,SBTF_RTF,SBTF_TEXT
+from . import GCTithi as GCTithi
+from . import GCNaksatra as GCNaksatra
+from . import GCSankranti as GCSankranti
+from . import GCConjunction as GCConjunction
+from . import GCAyanamsha as GCAyanamsha
+from . import GCYoga as GCYoga
+from . import GCRasi as GCRasi
+from . import GCStrings as GCStrings
+from . import GCDisplaySettings as GCDisplaySettings
+from . import GCLayoutData as GCLayoutData
 from math import ceil,floor
-import gaurabda.GCUT as GCUT
+from . import GCUT as GCUT
 import datetime
 
 

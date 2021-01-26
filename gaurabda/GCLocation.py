@@ -1,7 +1,7 @@
-import gaurabda.GCEarthData as GCEarthData
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCTimeZone as GCTimeZone
-import gaurabda.GCUT as GCUT
+from . import GCEarthData as GCEarthData
+from . import GCStrings as GCStrings
+from . import GCTimeZone as GCTimeZone
+from . import GCUT as GCUT
 import re
 
 def ParseDegreesFromString(str,bNorth):

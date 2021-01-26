@@ -2,7 +2,7 @@ import os
 import os.path
 import json
 
-import gaurabda.GCUT as GCUT
+from . import GCUT
 
 gcontinents = [
         "",

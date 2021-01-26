@@ -1,17 +1,20 @@
 import flask
 import logging
-from flask import jsonify, request
+from flask import jsonify, request, Response
 import io
 
 
 from .GCLocationList import FindLocation, FindLocations,GetLocationsForCountry
+from .GCCountry import GetCountries
 from .GCGregorianDate import GCGregorianDate,Today
 from .TCalendar import TCalendar
 
 app = flask.Flask(__name__)
 
 
-
+@app.route('/countries', methods=['GET'])
+def getListCountries():
+    return jsonify(GetCountries())
 
 @app.route('/find-location', methods=['GET','POST'])
 def findLocation():
@@ -73,14 +76,14 @@ def getCalendar():
        or loca['latitude'] is not None and loca['longitude'] is None:
        return flask.make_response('Either both LATITUDE,LONGITUDE are valid or none of them', 500)
 
-    if loca['name'] is None:
-        return flask.make_response('n: - Name of location must be specified.', 500)
+    if loca['city'] is None:
+        return flask.make_response('city: - Name of location must be specified.', 500)
 
     if loca['country'] is None:
-        return flask.make_response('c: Name of country must be specified.', 500)
+        return flask.make_response('country: Name of country must be specified.', 500)
 
     if loca['latitude'] is None:
-        sp = FindLocation(city=loca['name'], country=loca['country'])
+        sp = FindLocation(city=loca['city'], country=loca['country'])
         if sp is None:
             return flask.make_response('Location with name \'{}\', country \'{}\' is not found in database.'.format(loca['name'], loca['country']), 500)
         loca['latitude'] = sp.m_fLatitude
@@ -139,16 +142,18 @@ def getCalendar():
     # save results in various formats
     if fmt == 'txt' or fmt=='text' or fmt=='plain':
         tc.write(wf, format='plain')
+        return Response(wf.getvalue(), mimetype='text/plain')
     elif fmt=='html':
         tc.write(wf)
+        return Response(wf.getvalue(), mimetype='text/html')
     elif fmt=='html-table':
         tc.write(wf, layout='table')
+        return Response(wf.getvalue(), mimetype='text/html')
     elif fmt=='xml':
         tc.write(wf, format='xml')
+        return Response(wf.getvalue(), mimetype='text/xml')
     else:
-        tc.write(wf, format='json')
-
-    return flask.make_response(wf.getvalue(), 200)
+        return jsonify(tc.get_json_object())
 
 
 def run_server():

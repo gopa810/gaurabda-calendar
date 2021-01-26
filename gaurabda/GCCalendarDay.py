@@ -1,17 +1,17 @@
-from gaurabda.GCEnums import FeastType,FastType,MahadvadasiType,SpecialFestivalId
-from gaurabda.GCGregorianDate import GCGregorianDate
-from gaurabda.GCDayData import GCDayData
-from gaurabda.GCTime import GCTime
-from gaurabda.GCEnums.DisplayPriorities import *
-from gaurabda.GCEnums.GCDS import *
-from gaurabda.GCEnums.CaturmasyaCodes import *
+from .GCEnums import FeastType,FastType,MahadvadasiType,SpecialFestivalId
+from .GCGregorianDate import GCGregorianDate
+from .GCDayData import GCDayData
+from .GCTime import GCTime
+from .GCEnums.DisplayPriorities import *
+from .GCEnums.GCDS import *
+from .GCEnums.CaturmasyaCodes import *
 
-import gaurabda.GCNaksatra as GCNaksatra
-import gaurabda.GCTithi as GCTithi
-import gaurabda.GCRasi as GCRasi
-import gaurabda.GCStrings as GCStrings
-import gaurabda.GCDisplaySettings as GCDisplaySettings
-import gaurabda.GCMath as GCMath
+from . import GCNaksatra as GCNaksatra
+from . import GCTithi as GCTithi
+from . import GCRasi as GCRasi
+from . import GCStrings as GCStrings
+from . import GCDisplaySettings as GCDisplaySettings
+from . import GCMath as GCMath
 
 from math import floor,modf
 

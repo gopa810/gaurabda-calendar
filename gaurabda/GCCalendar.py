@@ -1,13 +1,13 @@
-from gaurabda.GCGregorianDate import GCGregorianDate,Today
-from gaurabda.GCEarthData import EARTHDATA
-from gaurabda.GCPancangaDate import GCGaurabdaDate
-from gaurabda.GCLocation import GCLocation
-from gaurabda.GCDayData import GCDayData,GetFirstDayOfYear
-from gaurabda.GCEnums import MasaId
-import gaurabda.GCTithi as GCTithi
-import gaurabda.GCStrings as GCStrings
+from .GCGregorianDate import GCGregorianDate,Today
+from .GCEarthData import EARTHDATA
+from .GCPancangaDate import GCGaurabdaDate
+from .GCLocation import GCLocation
+from .GCDayData import GCDayData,GetFirstDayOfYear
+from .GCEnums import MasaId
+from . import GCTithi as GCTithi
+from . import GCStrings as GCStrings
 from math import floor
-import gaurabda.GCUT as GCUT
+from . import GCUT as GCUT
 
 def GetGaurabdaYear(vc, earth):
     day = GCDayData()
