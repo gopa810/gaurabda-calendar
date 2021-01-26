@@ -4,7 +4,8 @@
 1. download sources from [GitHub](https://github.com/gopa810/gaurabda-calendar/archive/master.zip)
 2. install Flask python library `pip install Flask`
 3. set current durectory to `./server` in `gaurabda-calendar` sources
-4. start server as `python3 server.py` or `python server.py` (depends how you start python3 interpreter)
+4. (optional) set environment variable `GCAL_SERVER_PORT` to the number of IP port you want, by default it is 8047
+5. start server as `python3 server.py` or `python server.py` (depends how you start python3 interpreter)
 
 
 # REST API
@@ -20,7 +21,7 @@ REST API exposes a few methods to get what you want from GCAL server.
 Request:
 
 ```
-http://serveraddress/countries
+http://serveraddress:port/countries
 ```
 
 Response:
@@ -63,10 +64,10 @@ Example output: [example-find-locations](./example-find-location.md)
 Using GET method (specify name of country):
 
 ```
-http://serveraddress/find-location?country=<name-of-country>
+http://serveraddress:port/find-location?country=<exact-name-of-country>
 ```
 
-List of cities is limited to number 200.
+List of cities is limited to number 200. Name of country must be exact. For example `USA` will not work. It has to be `United States of America`.
 
 
 

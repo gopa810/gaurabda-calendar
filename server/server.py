@@ -7,5 +7,6 @@ import gaurabda as G
 import gaurabda.TServer as GS
 
 
+GCAL_PORT = int(os.getenv('GCAL_SERVER_PORT', 8047))
 
-GS.run_server()
+GS.run_server(port=GCAL_PORT)

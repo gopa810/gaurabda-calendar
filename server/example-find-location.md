@@ -4,7 +4,7 @@
 ## Request (method GET)
 
 ```
-http://server.address/find-location?name=Bra
+http://server.address:port/find-location?name=Bra
 ```
 
 ## Response (body)

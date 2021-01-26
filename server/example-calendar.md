@@ -5,7 +5,7 @@
 **Request URL**:
 
 ```
-http://server.address/calendar
+http://server.address:port/calendar
 ``` 
 
 **Request headers**:
@@ -32,7 +32,7 @@ Content-Type | application/json
 The same request as stated before, can be sent as GET method:
 
 ```
-http://server.address/calendar?city=Bratislava&country=Slovakia&period=30&year=2021&month=1&day=1
+http://server.address:port/calendar?city=Bratislava&country=Slovakia&period=30&year=2021&month=1&day=1
 ```
 
 

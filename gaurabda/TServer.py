@@ -156,8 +156,8 @@ def getCalendar():
         return jsonify(tc.get_json_object())
 
 
-def run_server():
-    app.run(port=8047)
+def run_server(port=8047):
+    app.run(port=port)
 
 if __name__=='__main__':
     run_server()
