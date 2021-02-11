@@ -366,7 +366,7 @@ class TCalendar:
                 str3 = "{} {} {:02d}:{:02d}".format(d2.day, GCStrings.GetMonthAbreviation(d2.month), int(h), int(m*60))
 
                 str4 = "{}: {} -- {} {} {} ({})".format(GCStrings.getString(89), GCStrings.GetTithiName((self.m_data[i].astrodata.nTithi + 29)%30), str2, GCStrings.getString(851), str3, GCStrings.GetDSTSignature(self.m_data[i].hasDST))
-                print(str4, str4.encode('utf-8'))
+                #print(str4, str4.encode('utf-8'))
                 self.m_data[i].AddEvent(PRIO_KSAYA, CAL_KSAYA, str4)
 
         for i in range(BEFORE_DAYS,self.m_PureCount + BEFORE_DAYS):
@@ -450,7 +450,8 @@ class TCalendar:
         currFestTop = 0
         eventSelected = 0
 
-        for kn,pEvx in enumerate(GCEventList.list):
+        #print('Events list length: ', len(GCEventList.get_list()))
+        for kn,pEvx in enumerate(GCEventList.get_list()):
             eventSelected = 0
             if (_masa_from >= 0 and pEvx.nMasa==_masa_from and pEvx.nTithi == _tithi_from and pEvx.nUsed and pEvx.nVisible):
                 eventSelected = 1

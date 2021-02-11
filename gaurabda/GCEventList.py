@@ -4,31 +4,37 @@ import os
 import os.path
 import json
 
-list = []
+glist_events = []
+
+def get_list():
+    if len(glist_events)==0:
+        OpenFile('events.json')
+    return glist_events
 
 def add():
     c = GCEvent()
-    list.append(c)
+    glist_events.append(c)
     return c
 
 def OpenFile(fileName):
-    global list
+    print('---------------- events loaded ----------------------')
+    global glist_events
     if not os.path.exists(fileName):
         fileName = os.path.join(os.path.dirname(__file__), 'res', 'events.json')
     with open(fileName,'rt',encoding='utf-8') as rf:
         events = json.load(rf)
         for e in events:
-            list.append(GCEvent(data=e))
-    return len(list)
+            glist_events.append(GCEvent(data=e))
+    return len(glist_events)
 
 def SaveFile(fileName):
     with open(fileName,'wt',encoding='utf-8') as wf:
-        events = [ce.data for ce in list]
-        wf.write(json.dumps(list,indent=4))
-    return len(list)
+        events = [ce.data for ce in glist_events]
+        wf.write(json.dumps(glist_events,indent=4))
+    return len(glist_events)
 
 def clear():
-    list = []
+    glist_events = []
 
 def SetOldStyleFasting(bOldStyle):
     locMatrix = []
@@ -38,7 +44,7 @@ def SetOldStyleFasting(bOldStyle):
     ret = 0
     key = 'fast' if bOldStyle else 'newfast'
     for a in locMatrix:
-        for pce in list:
+        for pce in glist_events:
             if pce.nMasa == a['masa'] and pce.nTithi == a['tithi'] and pce.nClass == a['cls']:
                 if pce.nFastType != a[key]:
                     ret += 1
@@ -47,14 +53,14 @@ def SetOldStyleFasting(bOldStyle):
     return ret
 
 def Count():
-    return len(list)
+    return len(glist_events)
 
 def EventAtIndex(index):
-    return list[index]
+    return glist_events[index]
 
 
 def unittests():
     GCUT.info('custom events')
     a = OpenFile('events.json')
     GCUT.nval(a,0,'open file')
-    print(list[0].data)
+    print(glist_events[0].data)

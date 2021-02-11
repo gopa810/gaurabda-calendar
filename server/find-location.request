@@ -20,11 +20,19 @@
 	<array>
 		<dict>
 			<key>inUse</key>
-			<true/>
+			<false/>
 			<key>parameter</key>
 			<string>name</string>
 			<key>value</key>
 			<string>Bra</string>
+		</dict>
+		<dict>
+			<key>inUse</key>
+			<true/>
+			<key>parameter</key>
+			<string>country</string>
+			<key>value</key>
+			<string>Russia</string>
 		</dict>
 	</array>
 	<key>parametersType</key>
