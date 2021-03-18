@@ -1,6 +1,6 @@
 import setuptools
 
-current_version = "0.8.1"
+current_version = "0.8.2"
 
 with open("README.rst", "r") as fh:
     long_description = fh.read()

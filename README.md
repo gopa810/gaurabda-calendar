@@ -18,6 +18,9 @@ We can obtain location object basically in two ways:
 * create new location
 
 ```python
+# import module
+import gaurabda as gcal
+
 # create new location
 
 loc = gcal.GCLocation(data = {

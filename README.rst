@@ -23,6 +23,11 @@ We can obtain location object basically in two ways:
 
 .. code:: python
 
+    # import module
+
+    import gaurabda as gcal
+
+
     # create new location
 
     loc = gcal.GCLocation(data = {
