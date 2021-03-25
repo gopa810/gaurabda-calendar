@@ -156,7 +156,7 @@ class TCalendar:
 
         # calculating moon times
         for mp in self.m_data:
-            mp.hasDST = GCTimeZone.determineDaylightStatus(mp.date, loc.m_nTimezoneId)
+            mp.hasDST = GCTimeZone.determineDaylightStatus(mp.date, id=loc.m_nTimezoneId)
 
         if bCalcMoon:
             for mp in self.m_data:

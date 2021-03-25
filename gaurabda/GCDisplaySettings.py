@@ -32,7 +32,7 @@ gss_default = [
     [1, 1, "F005", "Bengal-specific Holidays"],#27
     [1, 1, "F006", "My Personal Events"], #28
     # BEGIN GCAL 1.4.3
-    [1, 1, "TSSR", "Todat Sunrise"],  #29 Today sunrise
+    [1, 1, "TSSR", "Today Sunrise"],  #29 Today sunrise
     [1, 1, "TSSN", "Today Noon"],  #30 today noon
     [1, 1, "TSSS", "Today Sunset"],  #31 today sunset
     [0, 0, "TSAN", "Sandhya Times"],  #32 today + sandhya times

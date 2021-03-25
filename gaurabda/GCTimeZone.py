@@ -185,6 +185,8 @@ def is_n_xday(vc, n, x):
 #
 
 def GetDaylightBias(vc,tz):
+    if tz['bias']==0 or tz['endMonth']==0 or tz['startMonth']==0:
+        return 0
     bias = 1
     if vc.month == tz['startMonth']:
         if tz['startType'] == 0:
