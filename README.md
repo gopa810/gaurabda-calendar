@@ -104,3 +104,22 @@ Arguments for write method of TCalendar class:
 * **stream** any text writer, for example subclass of io.TextWriter
 * **format** this is optional parameter, default value is 'html', posible values are: 'plain', 'rtf', 'xml', 'html', 'json'
 * **layout** this is optional, denotes layout of output. It is effective for 'html' format, and possible values are 'list' and 'table'. Default is 'list'.
+
+
+## Setting of fasting style
+
+There are two fasting styles available:
+
+0) fasting rules based on Hari Bhakti Vilasa and applied after 2006 in GCAL program (refered as "new")
+1) fasting rules applied before year 2006 in VCAL program (refered as "old")
+
+To set fasting schema we need call method that does appropriate adjustment in configuration.
+
+```python
+import gaurabda as gcal
+
+gcal.SetFastingSchema(1)
+```
+
+In the example above we set "old" style fasting. It should be done before calculations in order to apply appropriate rules for the process of calculation.
+

@@ -102,13 +102,6 @@ def setValue(i,val):
     gss[i][0] = val
     gss[i][1] = val
 
-def setValue(code,val):
-    for a in gss:
-        if a[2]==code:
-            a[0] = val
-            a[1] = val
-            break
-
 def readFile(fileName):
     default = True
     try:
@@ -130,6 +123,7 @@ def writeFile(fileName):
     except:
         return False
     return True
+
 
 def unittests():
     GCUT.info('display settings')

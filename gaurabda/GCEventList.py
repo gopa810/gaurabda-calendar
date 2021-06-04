@@ -1,5 +1,6 @@
 from .GCEvent import GCEvent
 from . import GCUT as GCUT
+from . import GCDisplaySettings as GCDS
 import os
 import os.path
 import json
@@ -17,7 +18,7 @@ def add():
     return c
 
 def OpenFile(fileName):
-    print('---------------- events loaded ----------------------')
+    #print('---------------- events loaded ----------------------')
     global glist_events
     if not os.path.exists(fileName):
         fileName = os.path.join(os.path.dirname(__file__), 'res', 'events.json')
@@ -25,6 +26,8 @@ def OpenFile(fileName):
         events = json.load(rf)
         for e in events:
             glist_events.append(GCEvent(data=e))
+    #print(f'-------------setting fasting schema: {GCDS.getValue(42)} -----------------')
+    SetOldStyleFasting(GCDS.getValue(42))
     return len(glist_events)
 
 def SaveFile(fileName):
@@ -58,6 +61,10 @@ def Count():
 def EventAtIndex(index):
     return glist_events[index]
 
+def SetFastingSchema(fs):
+    GCDS.setValue(42, fs)
+    get_list()
+    SetOldStyleFasting(fs)
 
 def unittests():
     GCUT.info('custom events')
