@@ -739,7 +739,7 @@ class TCalendar:
             return 1
 
         nMahaType = self.IsMhd58(nIndex)
-        if (TITHI_GAURA_DVADASI == t.astrodata.nTithi and TITHI_GAURA_DVADASI == t.astrodata.nTithiSunset and nMahaType!=0):
+        if (TITHI_GAURA_DVADASI == t.astrodata.nTithi and TITHI_GAURA_DVADASI == t.astrodata.nTithiSunset and nMahaType != EV_NULL):
             t.nMhdType = nMahaType
             nMhdDay = nIndex
         elif (GCTithi.TITHI_DVADASI(t.astrodata.nTithi)):
